@@ -18,6 +18,7 @@ import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 
 private const val IMG_CODE = 1001
+private const val COLLECTION = "Game"
 
 class AddGameFragment : Fragment() {
     private var _binding: FragmentAddGameBinding? = null
@@ -52,7 +53,7 @@ class AddGameFragment : Fragment() {
 
             Log.d("game.id", currentGame!!.id)
 
-            firestoreDatabase.collection("Games")
+            firestoreDatabase.collection(COLLECTION)
                 .document(currentGame!!.id)
                 .set(currentGame!!)
                 .addOnCompleteListener {

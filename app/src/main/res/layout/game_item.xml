@@ -14,6 +14,7 @@
         android:weightSum="6">
 
         <ImageView
+            android:id="@+id/game_item_cover_image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="4"
@@ -21,6 +22,7 @@
             tools:src="@drawable/splash" />
 
         <TextView
+            android:id="@+id/game_item_name_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -33,6 +35,7 @@
             tools:text="Game name" />
 
         <TextView
+            android:id="@+id/game_item_release_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
