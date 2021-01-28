@@ -20,7 +20,7 @@
         app:tint="@color/marvel_red" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/circle"
+        android:id="@+id/upload_photo_card"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_marginBottom="16dp"
@@ -30,15 +30,14 @@
         android:gravity="center"
         app:cardCornerRadius="160dp"
         app:cardPreventCornerOverlap="true"
-        app:contentPadding="4dp"
         app:layout_constraintBottom_toTopOf="@+id/white_card"
         app:layout_constraintEnd_toEndOf="@+id/red_card"
         app:layout_constraintStart_toStartOf="@id/red_card">
 
         <ImageView
             android:id="@+id/game_cover_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             tools:src="@drawable/splash" />
 
@@ -116,7 +115,7 @@
         app:boxBackgroundColor="@color/off_white"
         app:boxStrokeColor="@color/dark_blue"
         app:hintTextColor="@color/marvel_red"
-        app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
+        app:layout_constraintBottom_toTopOf="@+id/save_button"
         app:layout_constraintEnd_toEndOf="@+id/textField"
         app:layout_constraintStart_toStartOf="@+id/textField"
         app:layout_constraintTop_toBottomOf="@+id/email_text_input">
@@ -131,7 +130,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/sign_in_button"
+        android:id="@+id/save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

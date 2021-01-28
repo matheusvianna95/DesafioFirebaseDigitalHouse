@@ -23,13 +23,23 @@ class LoginFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
     }
 
+    override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = mAuth.currentUser
+        navController = findNavController()
+
+        if (currentUser != null) {
+            navController.navigate(R.id.action_loginFragment_to_homeFragment)
+        }
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-
-        navController = findNavController()
 
         binding.createAccountText.setOnClickListener {
             navController.navigate(R.id.action_loginFragment_to_registerFragment)
