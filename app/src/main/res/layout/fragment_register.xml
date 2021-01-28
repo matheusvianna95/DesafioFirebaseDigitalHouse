@@ -7,6 +7,17 @@
     android:background="@drawable/splash"
     tools:context=".RegisterFragment">
 
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="16dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_arrow_back_white"
+        android:translationZ="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/red_card"
         android:layout_width="0dp"
@@ -56,7 +67,7 @@
         app:layout_constraintTop_toTopOf="@+id/red_card" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
+        android:id="@+id/name_text_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -67,7 +78,7 @@
         app:boxBackgroundColor="@color/off_white"
         app:boxStrokeColor="@color/dark_blue"
         app:hintTextColor="@color/marvel_red"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintBottom_toTopOf="@+id/email_text_input"
         app:layout_constraintEnd_toEndOf="@+id/red_card"
         app:layout_constraintStart_toStartOf="@+id/red_card"
         app:layout_constraintTop_toTopOf="@+id/white_card"
@@ -83,7 +94,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/email_text_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -92,10 +103,10 @@
         app:boxBackgroundColor="@color/off_white"
         app:boxStrokeColor="@color/dark_blue"
         app:hintTextColor="@color/marvel_red"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/textField"
-        app:layout_constraintStart_toStartOf="@+id/textField"
-        app:layout_constraintTop_toBottomOf="@+id/textField">
+        app:layout_constraintBottom_toTopOf="@+id/password_text_input"
+        app:layout_constraintEnd_toEndOf="@+id/name_text_input"
+        app:layout_constraintStart_toStartOf="@+id/name_text_input"
+        app:layout_constraintTop_toBottomOf="@+id/name_text_input">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -107,7 +118,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/password_text_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -116,10 +127,10 @@
         app:boxBackgroundColor="@color/off_white"
         app:boxStrokeColor="@color/dark_blue"
         app:hintTextColor="@color/marvel_red"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
-        app:layout_constraintEnd_toEndOf="@+id/textField"
-        app:layout_constraintStart_toStartOf="@+id/textField"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintBottom_toTopOf="@+id/repeat_text_input"
+        app:layout_constraintEnd_toEndOf="@+id/name_text_input"
+        app:layout_constraintStart_toStartOf="@+id/name_text_input"
+        app:layout_constraintTop_toBottomOf="@+id/email_text_input">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -131,19 +142,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/repeat_text_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:hint="Repeat password"
         android:textColorHint="@color/marvel_red"
         app:boxBackgroundColor="@color/off_white"
         app:boxStrokeColor="@color/dark_blue"
         app:hintTextColor="@color/marvel_red"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton"
-        app:layout_constraintEnd_toEndOf="@+id/textField"
-        app:layout_constraintStart_toStartOf="@+id/textField"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        app:layout_constraintBottom_toTopOf="@+id/register_button"
+        app:layout_constraintEnd_toEndOf="@+id/name_text_input"
+        app:layout_constraintStart_toStartOf="@+id/name_text_input"
+        app:layout_constraintTop_toBottomOf="@+id/password_text_input">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -155,17 +166,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/register_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Save"
+        android:text="Register"
         android:textSize="18sp"
         app:backgroundTint="@color/marvel_red"
         app:iconSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/white_card"
-        app:layout_constraintEnd_toEndOf="@+id/textField"
-        app:layout_constraintStart_toStartOf="@+id/textField"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintEnd_toEndOf="@+id/name_text_input"
+        app:layout_constraintStart_toStartOf="@+id/name_text_input"
+        app:layout_constraintTop_toBottomOf="@+id/repeat_text_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
