@@ -1,6 +1,7 @@
 package com.example.desafiofirebasedigitalhouse
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +42,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnItemClickListener {
         }
 
         binding.addGameButton.setOnClickListener {
-            navController.navigate(R.id.action_homeFragment_to_addGameFragment)
+            navController.navigate(HomeFragmentDirections.actionHomeFragmentToAddGameFragment(null))
         }
 
         viewModel.getGameList()
@@ -51,11 +52,17 @@ class HomeFragment : Fragment(), HomeAdapter.OnItemClickListener {
 
     override fun onItemClick(position: Int) {
         val clickedItem: Game = homeAdapter.gameList[position]
-        // TODO
+        Log.d("item clicked", clickedItem.toString())
+        navController.navigate(
+            HomeFragmentDirections.actionHomeFragmentToGameDetailFragment(
+                clickedItem
+            )
+        )
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        Log.d("Destroy", "ed")
         _binding = null
     }
 

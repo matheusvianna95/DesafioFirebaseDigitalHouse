@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QueryDocumentSnapshot
 import kotlinx.coroutines.launch
 
 private const val COLLECTION = "Game"
@@ -20,25 +21,18 @@ class HomeViewModel : ViewModel() {
             firestoreDatabase.collection(COLLECTION)
                 .get()
                 .addOnSuccessListener { result ->
-                    for (game in result) {
-                        Log.d("Firestore", "${game.id} => ${game.data}")
-                        val incomingGame = Game(
-                            game.get("name").toString(),
-                            game.get("release").toString(),
-                            game.get("description").toString(),
-                            game.get("imgUrl").toString(),
-                            game.get("id").toString()
-                        )
-                        incomingGameList.add(incomingGame)
+                    for (document in result) {
+                        Log.d("Firestore", "${document.id} => ${document.data}")
+                        incomingGameList.add(document.toObject(Game::class.java))
                     }
 
-                    gameList.postValue(incomingGameList)
+                    gameList.value = incomingGameList
                 }
                 .addOnFailureListener { exception ->
                     Log.w("Firestore", "Error getting documents.", exception)
                 }
 
         }
-
     }
+
 }

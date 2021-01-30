@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import kotlin.random.Random
 
 class HomeAdapter(val listener: OnItemClickListener) :
     RecyclerView.Adapter<HomeAdapter.GameViewHolder>() {
@@ -48,7 +49,7 @@ class HomeAdapter(val listener: OnItemClickListener) :
         holder.gameRelease.text = currentItem.release
 
         val imgUrl = currentItem.imgUrl
-        Picasso.get().load(imgUrl).fit().centerCrop().into(holder.gameCover)
+        Picasso.get().load(imgUrl + "&" + Random.nextInt()).fit().centerCrop().into(holder.gameCover)
     }
 
     override fun getItemCount() = gameList.size

@@ -37,9 +37,9 @@
         <ImageView
             android:id="@+id/game_cover_image"
             android:layout_width="match_parent"
+            android:src="@drawable/ic_add"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            tools:src="@drawable/splash" />
+            android:scaleType="centerCrop" />
 
     </androidx.cardview.widget.CardView>
 
@@ -121,6 +121,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="2"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 

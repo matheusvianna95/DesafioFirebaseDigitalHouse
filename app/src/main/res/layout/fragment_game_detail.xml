@@ -13,21 +13,23 @@
         android:layout_margin="16dp"
         android:background="@color/transparent"
         android:src="@drawable/ic_arrow_back_white"
+        android:tint="@color/marvel_red"
         android:translationZ="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/edit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/marvel_red"
+        android:layout_marginEnd="16dp"
+        android:elevation="6dp"
         android:src="@drawable/ic_edit"
-        android:translationZ="1dp"
+        app:backgroundTint="@color/marvel_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/game_title_image"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toBottomOf="@+id/game_title_image"
+        app:layout_constraintVertical_bias="0" />
 
     <ImageView
         android:id="@+id/game_cover"
@@ -65,10 +67,11 @@
 
         <TextView
             android:id="@+id/game_title_text"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="8dp"
+            android:textColor="@android:color/primary_text_light"
             android:textSize="28sp"
             android:textStyle="bold"
             tools:text="Game name" />
@@ -82,15 +85,22 @@
             android:textSize="20sp"
             tools:text="Release: " />
 
-        <TextView
-            android:id="@+id/game_description_text"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="8dp"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            tools:text="Description" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/game_description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="16dp"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Description" />
+        </ScrollView>
 
     </LinearLayout>
 

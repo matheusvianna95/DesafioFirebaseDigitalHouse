@@ -57,7 +57,15 @@
         android:id="@+id/addGameFragment"
         android:name="com.example.desafiofirebasedigitalhouse.AddGameFragment"
         android:label="fragment_add_game"
-        tools:layout="@layout/fragment_add_game" />
+        tools:layout="@layout/fragment_add_game" >
+        <argument
+            android:name="game"
+            app:argType="com.example.desafiofirebasedigitalhouse.Game"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_addGameFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gameDetailFragment"
         android:name="com.example.desafiofirebasedigitalhouse.GameDetailFragment"
@@ -66,5 +74,11 @@
         <action
             android:id="@+id/action_gameDetailFragment_to_addGameFragment"
             app:destination="@id/addGameFragment" />
+        <argument
+            android:name="game"
+            app:argType="com.example.desafiofirebasedigitalhouse.Game" />
+        <action
+            android:id="@+id/action_gameDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
