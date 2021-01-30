@@ -1,4 +1,4 @@
-# MarsGaze
+# Desafio Firebase Digital House
 
 Solução do Desafio Firebase proposto durante o curso de Desenvolvimento Mobile Android da Digital House oferecido pelo programa Santander Coders.
 
